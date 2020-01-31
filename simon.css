@@ -1,0 +1,38 @@
+.red {
+    background-color: red;
+}
+
+
+.green {
+    background-color: green;
+}
+
+
+
+.yellow {
+    background-color: yellow;
+}
+
+
+.blue {
+    background-color: blue;
+}
+
+.active{
+    opacity: 0.5;
+}
+
+#red,
+#yellow,
+#green,
+#blue,
+#button {
+    height: 250px;
+    width: 47%;
+    display: inline-block;
+}
+
+button{
+    text-transform: uppercase;
+    text-align: center;
+}
