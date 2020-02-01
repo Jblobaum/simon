@@ -1,3 +1,17 @@
+
+#red{
+border-radius: 200px 0px 0px 0px;
+}
+#yellow{
+border-radius: 0px 0px 0px 200px;
+}
+#green{border-radius: 0px 200px 0px 0px;}
+#blue{
+border-radius: 0px 0px 200px 0px;
+
+}
+
+
 .red {
     background-color: red;
 }
@@ -29,6 +43,7 @@
 #button {
     height: 250px;
     width: 47%;
+    border-radius: 1 1 1 1;
     display: inline-block;
 }
 
