@@ -5,17 +5,7 @@ let yellow = document.getElementById("yellow");
 let blue = document.getElementById("blue");
 
 
-for (i = 0; i < simonButton.length; i++) {
-    simonButton[i].addEventListener("mousedown", function () {
-        this.classList.add("active");
-    })
-}
-for (i = 0; i < simonButton.length; i++) {
-    simonButton[i].addEventListener("mouseup", function () {
-        this.classList.remove("active");
-    })
 
-}
 let counter = 0;
 let round = 0;
 let simonArray = [];
@@ -26,13 +16,12 @@ for (var i = 0; i < arrayMax; i++) {
 }
 console.log(simonArray)
 
-
+let comp
 function computerChoice() {
     if (counter > round) {
-        counter = 0;
+        let counter = 0;
     } else {
         let comp = simonArray[counter];
-        console.log(comp);
         if (comp === 0) {
             document.getElementById("red").classList.add("active");
             setTimeout(function () {
@@ -62,33 +51,33 @@ function computerChoice() {
                 computerChoice()
             }, 500)
         }
-    }
+    } return simonArray[counter]
 }
+
+
+// console.log(simonArray[counter])
 computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
-// computerChoice()
 
+for (i = 0; i < simonButton.length; i++) {
+    simonButton[i].addEventListener("mousedown", function () {
+        this.classList.add("active");
 
-
-// simon=[0, 1, 2, 3]
-
-// for (let i = 1; i <= 5; i++) {
-//     let x = simonButton;
-//     for (let j = 1; j < i; j++) {
-//         x = x + simonButton;
-//     }
-// console.log(x)
-// Chris Trying Stuff
-
-
-// let userArray = [];
+    })
+}
+for (i = 0; i < simonButton.length; i++) {
+    simonButton[i].addEventListener("mouseup", function () {
+        this.classList.remove("active");
+        let userNum = parseInt(this.innerHTML)
+        let gameNum = parseInt(simonArray[counter - 1]);
+        // console.log(userNum)
+        // console.log(simonArray[counter]);
+        console.log(gameNum);
+        if (userNum = gameNum){
+        do { 
+            console.log("yes");
+            counter ++}
+            while(counter > round)
+        }
+        
+    })
+}
