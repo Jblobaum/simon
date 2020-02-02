@@ -16,6 +16,7 @@ let limit = arrayMax + 1;
 function startGame (){
     counter = 0
     round = 0
+    playerClickCount = 0
 for (var i = 0; i < arrayMax; i++) {
     simonArray.push(Math.floor(Math.random() * 4));
 }
@@ -100,7 +101,7 @@ for (i = 0; i < simonButton.length; i++) {
         
             
         } else if (userNum === gameNum[playerClickCount] && playerClickCount === round) {
-            console.log("yes");
+            console.log("yes, next round");
             round ++;
             counter = 0
             playerClickCount = 0
