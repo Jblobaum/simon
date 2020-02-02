@@ -33,7 +33,8 @@ border-radius: 0px 0px 200px 0px;
 }
 
 .active{
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    background-color: black;
 }
 
 #red,

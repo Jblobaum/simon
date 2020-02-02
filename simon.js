@@ -3,6 +3,7 @@ let red = document.getElementById("red");
 let green = document.getElementById("green");
 let yellow = document.getElementById("yellow");
 let blue = document.getElementById("blue");
+let clickCount = document.getElementById("clickCount").innerText;
 
 
 
@@ -17,9 +18,15 @@ for (var i = 0; i < arrayMax; i++) {
 console.log(simonArray)
 
 let comp
+
 function computerChoice() {
+    console.log("computer's choice");
+    console.log(counter);
+    console.log(round);
+    
+    
+
     if (counter > round) {
-        let counter = 0;
     } else {
         let comp = simonArray[counter];
         if (comp === 0) {
@@ -51,11 +58,13 @@ function computerChoice() {
                 computerChoice()
             }, 500)
         }
-    } return simonArray[counter]
+    }
+    return simonArray[counter]
 }
+console.log(simonArray[counter]);
 
 
-// console.log(simonArray[counter])
+// game Start!
 computerChoice()
 
 for (i = 0; i < simonButton.length; i++) {
@@ -65,19 +74,36 @@ for (i = 0; i < simonButton.length; i++) {
     })
 }
 for (i = 0; i < simonButton.length; i++) {
+    // if(){
     simonButton[i].addEventListener("mouseup", function () {
         this.classList.remove("active");
         let userNum = parseInt(this.innerHTML)
         let gameNum = parseInt(simonArray[counter - 1]);
-        // console.log(userNum)
-        // console.log(simonArray[counter]);
-        console.log(gameNum);
-        if (userNum = gameNum){
-        do { 
-            console.log("yes");
-            counter ++}
-            while(counter > round)
+        if (userNum === gameNum && counter > round) {
+            console.log("yes")
+            counter = 0;
+            round++;
+            clickCount++
+            // console.log(round)
+            setTimeout(function(){ computerChoice()}, 500);
+        // } else if (userNum === gameNum) {
+        //     console.log("yes");
+        //     round ++;
+        } else {
+            let lose = true
+            alert("You Lose! Press Start to play again!")
         }
-        
-    })
+    })    
 }
+
+// for (i = 0; i < simonButton.length; i++) {
+//     simonButton[i].addEventListener("mousedown", function (){
+    
+     
+
+//     do{
+//         let clickCount = 0
+//         clickCount++
+//         document.getElementById('clickCount').innerText = parseInt(clickCount);
+//     } while(lose = false)})
+// }
