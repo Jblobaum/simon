@@ -11,10 +11,17 @@ let simonArray = [];
 let arrayMax = 100;
 let limit = arrayMax + 1;
 // generate simon array for game
+
+
+function startGame (){
+    counter = 0
+    round = 0
 for (var i = 0; i < arrayMax; i++) {
     simonArray.push(Math.floor(Math.random() * 4));
 }
 console.log(simonArray)
+
+setTimeout(computerChoice (), 500)
 
 let comp
 
@@ -68,10 +75,6 @@ function computerChoice() {
 }
 
 
-
-// game Start!
-computerChoice()
-
 for (i = 0; i < simonButton.length; i++) {
     simonButton[i].addEventListener("mousedown", function () {
         this.classList.add("active");
@@ -105,7 +108,8 @@ for (i = 0; i < simonButton.length; i++) {
         } else {
             let lose = true
             alert("You Lose! Press Start to play again!")
+            round = 0;
         }
     })    
 }
-
+}
