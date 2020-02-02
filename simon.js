@@ -4,14 +4,13 @@ let green = document.getElementById("green");
 let yellow = document.getElementById("yellow");
 let blue = document.getElementById("blue");
 let clickCount = document.getElementById("clickCount").innerText;
-
-
-
+let playerClickCount = 0
 let counter = 0;
 let round = 0;
 let simonArray = [];
 let arrayMax = 100;
 let limit = arrayMax + 1;
+// generate simon array for game
 for (var i = 0; i < arrayMax; i++) {
     simonArray.push(Math.floor(Math.random() * 4));
 }
@@ -25,7 +24,6 @@ function computerChoice() {
     console.log(round);
     
     
-
     if (counter > round) {
     } else {
         let comp = simonArray[counter];
@@ -34,34 +32,41 @@ function computerChoice() {
             setTimeout(function () {
                 document.getElementById("red").classList.remove("active");
                 counter++;
+                console.log(counter);
                 computerChoice()
             }, 500)
+
         } else if (comp === 1) {
             document.getElementById("green").classList.add("active");
             setTimeout(function () {
                 document.getElementById("green").classList.remove("active");
                 counter++;
+                console.log(counter);
                 computerChoice()
             }, 500)
+
         } else if (comp === 2) {
             document.getElementById("yellow").classList.add("active");
             setTimeout(function () {
                 document.getElementById("yellow").classList.remove("active");
                 counter++;
+                console.log(counter);
                 computerChoice()
             }, 500)
+
         } else if (comp === 3) {
             document.getElementById("blue").classList.add("active");
             setTimeout(function () {
                 document.getElementById("blue").classList.remove("active");
                 counter++;
+                console.log(counter);
                 computerChoice()
             }, 500)
+            
         }
     }
-    return simonArray[counter]
 }
-console.log(simonArray[counter]);
+
 
 
 // game Start!
@@ -73,22 +78,30 @@ for (i = 0; i < simonButton.length; i++) {
 
     })
 }
+
+
 for (i = 0; i < simonButton.length; i++) {
     // if(){
     simonButton[i].addEventListener("mouseup", function () {
         this.classList.remove("active");
         let userNum = parseInt(this.innerHTML)
-        let gameNum = parseInt(simonArray[counter - 1]);
-        if (userNum === gameNum && counter > round) {
+        let gameNum = simonArray;
+        // let count = counter - 1;
+         if (userNum === gameNum[playerClickCount] && playerClickCount < round) {
             console.log("yes")
-            counter = 0;
-            round++;
-            clickCount++
-            // console.log(round)
-            setTimeout(function(){ computerChoice()}, 500);
-        // } else if (userNum === gameNum) {
-        //     console.log("yes");
-        //     round ++;
+            playerClickCount ++;
+            
+            
+
+            
+        
+            
+        } else if (userNum === gameNum[playerClickCount] && playerClickCount === round) {
+            console.log("yes");
+            round ++;
+            counter = 0
+            playerClickCount = 0
+            setTimeout(function(){ computerChoice()}, 1000); 
         } else {
             let lose = true
             alert("You Lose! Press Start to play again!")
@@ -96,14 +109,3 @@ for (i = 0; i < simonButton.length; i++) {
     })    
 }
 
-// for (i = 0; i < simonButton.length; i++) {
-//     simonButton[i].addEventListener("mousedown", function (){
-    
-     
-
-//     do{
-//         let clickCount = 0
-//         clickCount++
-//         document.getElementById('clickCount').innerText = parseInt(clickCount);
-//     } while(lose = false)})
-// }
