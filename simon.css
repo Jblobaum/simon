@@ -1,13 +1,28 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
 
-#red{
-border-radius: 200px 0px 0px 0px;
+div {
+    color: transparent;
 }
-#yellow{
-border-radius: 0px 0px 0px 200px;
+
+#red {
+    border-radius: 200px 0px 0px 0px;
 }
-#green{border-radius: 0px 200px 0px 0px;}
-#blue{
-border-radius: 0px 0px 200px 0px;
+
+#yellow {
+    border-radius: 0px 0px 0px 200px;
+}
+
+#green {
+    border-radius: 0px 200px 0px 0px;
+}
+
+#blue {
+    border-radius: 0px 0px 200px 0px;
 
 }
 
@@ -36,8 +51,8 @@ border-radius: 0px 0px 200px 0px;
     opacity: 0.5;
 }
 
-.active{
-    opacity: 100;
+.active {
+    opacity: 1;
 }
 
 #red,
@@ -51,7 +66,17 @@ border-radius: 0px 0px 200px 0px;
     display: inline-block;
 }
 
-button{
+button {
     text-transform: uppercase;
     text-align: center;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 2px;
+    cursor: pointer;
 }
